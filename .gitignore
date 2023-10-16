@@ -2,7 +2,7 @@
 node_modules/
 
 # Parcel caches
-.cache/
+.parcel-cache
 
 # Distribution directory
 dist/
