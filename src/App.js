@@ -76,7 +76,8 @@ const appRouter = createBrowserRouter([
   //  this array of data of url
   {
     path: "/",
-    element: <AppLayout />
+    element: <AppLayout />,
+    errorElement: <Error />
 
   },
   {
@@ -87,10 +88,6 @@ const appRouter = createBrowserRouter([
     path: "/arnab",
     element: <Arnab />
   },
-  {
-    path: "/error",
-    element: <Error />
-  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
