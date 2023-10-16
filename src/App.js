@@ -37,6 +37,8 @@ import Body from "./components/Body";
 import Footer from "./Components/Footer";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
 import About from "./Components/About";
+import Arnab from "./Components/Arnab";
+import Error from "./Components/Error";
 
 
 /* My Food App structure will look like this, 
@@ -71,6 +73,7 @@ const AppLayout = () => {
 };
 
 const appRouter = createBrowserRouter([
+  //  this array of data of url
   {
     path: "/",
     element: <AppLayout />
@@ -79,6 +82,14 @@ const appRouter = createBrowserRouter([
   {
     path: "/about",
     element: <About />
+  },
+  {
+    path: "/arnab",
+    element: <Arnab />
+  },
+  {
+    path: "/error",
+    element: <Error />
   }
 ])
 
