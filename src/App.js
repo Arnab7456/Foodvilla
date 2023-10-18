@@ -35,10 +35,10 @@ import ReactDOM from "react-dom/client";
 import Header from "./Components/Header";
 import Body from "./components/Body";
 import Footer from "./Components/Footer";
-import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider} from "react-router-dom";
 import About from "./Components/About";
-import Arnab from "./Components/Arnab";
 import Error from "./Components/Error";
+import Contact from "./Components/Contact";
 
 
 /* My Food App structure will look like this, 
@@ -66,7 +66,13 @@ const AppLayout = () => {
   return (
     <>
       <Header />
+      {/* <About />
       <Body />
+      <Contact /> 
+      {Outlet}      
+      */    
+      }
+      <Outlet />
       <Footer />
     </>
   );
@@ -77,16 +83,21 @@ const appRouter = createBrowserRouter([
   {
     path: "/",
     element: <AppLayout />,
-    errorElement: <Error />
-
-  },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path: "/arnab",
-    element: <Arnab />
+    errorElement: <Error />,
+    children: [
+      {
+        path: "/",
+        element: <Body />
+      },
+      {
+        path: "/about",
+        element: <About />
+      },
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+    ],
   },
 ])
 
