@@ -1,19 +1,67 @@
-.Header{
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    border: 1px solid black;
-}
-.nav-items > ul{
-    list-style-type: none;
-    display: flex;
-}
-.nav-items >ul >li{
-    padding: 10px;
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background: white; 
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); 
+  font-family: 'Arial', sans-serif; 
+  position: sticky;
+    top: 0;
+    z-index: 1000;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 
 }
+
+.logo {
+  height: 50px;
+  width: auto;
+}
+
+.nav-items ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-items ul li {
+  position: relative; /* For the hover effect */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.nav-items ul li:hover {
+  transform: translateY(-3px); /* Move item slightly up on hover */
+}
+
+.nav-items ul li:hover:after {
+  content: ''; /* Create a pseudo-element for an underline effect */
+  position: absolute;
+  bottom: -5px; 
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: white; /* Color of the underline */
+  transform: scaleX(1); /* Make sure it covers the full width */
+}
+
+/* Link Styling */
+.nav-items ul li a {
+  color: white; /* Font color */
+  text-decoration: none; /* Remove underlines */
+  transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.nav-items ul li a:hover {
+  color: #333; /* Change color on hover */
+}
+
+
 .logo{
-    width: 100px;
+    width: 50px;
 }
 .restaurant-list{
     width: auto;
